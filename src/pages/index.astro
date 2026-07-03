@@ -1,11 +1,30 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import "../styles/global.css";
+import Footer from "../sections/Footer.astro";
+import Sobre from "../sections/Sobre.astro";
+import Menu from "../sections/Menu.astro";
 ---
-
-<Layout>
-	<Welcome />
-</Layout>
+<html lang="pt-BR">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+		<meta name="generator" content={Astro.generator} />
+		<title>Diegnóstico</title>
+	</head>
+	<body>
+    <div class="container-info">
+      <h1>Olá, eu sou o Diego Rapoport!</h1>
+      <div class="img-menu">
+        <img id="pixel-di" src="src/assets/pixeldi.png">
+        <aside><Menu /></aside>
+      </div>
+    </div>
+    <Sobre />
+    <Footer />
+	</body>
+</html>
