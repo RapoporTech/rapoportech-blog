@@ -43,7 +43,6 @@ a.tooltip {
 }
 
 section {
-  height: 70%;
   padding: 0 2rem;
   backdrop-filter: blur(2px);
   font-family: 'BioRhyme', serif;
@@ -112,6 +111,11 @@ footer {
     background: rgba(0, 0, 0, 0.08);
     font-family: 'Geist Pixel', monospace;
   }
+}
+
+.sobre {
+  height: 82%;
+  overflow: auto;
 }
 
 .pergunta {
