@@ -137,3 +137,18 @@ footer {
 .not-ready {
   display: none;
 }
+
+.drumkit {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background-image: url('src/assets/Drumkit.png');
+  background-size: 100% 100%;
+  left: 11rem;
+  top: 13rem;
+
+  &:hover {
+    width: 9rem;
+    height: 5rem;
+  }
+}
