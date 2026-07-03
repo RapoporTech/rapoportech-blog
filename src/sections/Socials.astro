@@ -1,0 +1,21 @@
+---
+import "../styles/socials.css";
+
+const socials = [
+  {
+    id: "enterprise",
+    name: 'Linkedin',
+    url: 'https://www.linkedin.com/in/diego-rapoport/',
+    tooltip: 'Linkedin',
+    },
+    {
+    id: 'spacenine',
+    name: 'Instagram',
+    url: 'https://www.instagram.com/diegorapouopote',
+    tooltip: 'Instagram',
+    },
+]
+---
+{socials.map((social) => (
+<a id={social.id} href={social.url} class="tooltip" data-tooltip={social.tooltip}></a>
+))}
