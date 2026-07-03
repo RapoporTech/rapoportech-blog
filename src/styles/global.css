@@ -47,7 +47,15 @@ section {
   padding: 0 2rem;
   backdrop-filter: blur(2px);
   font-family: 'BioRhyme', serif;
-  font-size: 1.3rem
+  font-size: 1.3rem;
+
+  &::before {
+    content: "\266B";
+    display: inline-block;
+    margin-right: .5rem;
+    transform: rotate(15deg);
+    animation: float 2s ease-in-out infinite;
+  }
 }
 
 footer {
@@ -102,6 +110,7 @@ footer {
   >h1 {
     backdrop-filter: blur(2px);
     background: rgba(0, 0, 0, 0.08);
+    font-family: 'Geist Pixel', monospace;
   }
 }
 
@@ -110,7 +119,8 @@ footer {
   font-style: italic;
   color: #FFD659;
 
-  &::after,&::before {
+  &::after,
+  &::before {
     content: "\"";
     font-weight: bold;
   }
