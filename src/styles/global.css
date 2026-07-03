@@ -67,15 +67,20 @@ footer {
 
   >.img-menu {
     display: flex;
-    width: 28vw;
+    justify-content: flex-end;
+    width: 100%;
 
     >#pixel-di {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
       width: 20rem;
       border-radius: 1rem;
     }
 
     >aside {
-      padding-left: 5rem;
+      position: relative;
+      right: 10rem;
 
       >#blog {
         position: relative;
@@ -109,4 +114,8 @@ footer {
 
 .destaque-tamanho {
   font-size: 1.1rem;
+}
+
+.not-ready {
+  display: none;
 }
