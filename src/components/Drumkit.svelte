@@ -34,7 +34,6 @@
       clickCount++;
       if (clickCount === 42) {
         awardBadge(badgeAward);
-        console.log("🎉 WOW!! Você encontrou uma surpresinha!");
       }
     });
   });
@@ -44,7 +43,7 @@
   <div bind:this={drumkitEl} id="drumkit"></div>
   <div bind:this={tooltipEl} id="drumkit-tooltip" popover="manual">
     <p>🎉 WOW!! Você encontrou uma surpresinha!</p>
-    <p>Continue procurando, você pode achar mais 🧐</p>
+    <!-- <p>Continue procurando, você pode achar mais 🧐</p> -->
   </div>
 {/if}
 
