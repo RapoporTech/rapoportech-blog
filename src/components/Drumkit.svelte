@@ -6,7 +6,7 @@
   let show = $state(false);
   let clickCount = $state(0);
 
-  const badgeKey = "badgeSystem";
+  const badgeKey = "medalhadas";
   const badgeAward = "drumkit";
 
   function hasBadge() {
