@@ -9,9 +9,25 @@
   const badgeKey = "badgeSystem";
   const badgeAward = "drumkit";
 
+  function hasBadge() {
+    try {
+      const list = JSON.parse(localStorage.getItem(badgeKey) || "[]");
+      return Array.isArray(list) && list.includes(badgeAward);
+    } catch {
+      return false;
+    }
+  }
+
+  function awardBadge() {
+    const list = JSON.parse(localStorage.getItem(badgeKey) || "[]");
+    if (!list.includes(badgeAward)) {
+      list.push(badgeAward);
+      localStorage.setItem(badgeKey, JSON.stringify(list));
+    }
+  }
+
   onMount(() => {
-    const earned = localStorage.getItem(badgeKey) === badgeAward;
-    if (!earned) show = true;
+    if (!hasBadge()) show = true;
   });
 
   $effect(() => {
@@ -34,7 +50,7 @@
     drumkitEl.addEventListener("click", () => {
       clickCount++;
       if (clickCount === 42) {
-        localStorage.setItem(badgeKey, badgeAward);
+        awardBadge();
         console.log("🎉 WOW!! Você encontrou uma surpresinha!");
       }
     });
