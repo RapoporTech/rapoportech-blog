@@ -1,33 +1,16 @@
 <script>
   import { onMount } from "svelte";
+  import { hasBadge, awardBadge } from "../lib/medalhadas.js";
 
   let drumkitEl = $state(null);
   let tooltipEl = $state(null);
   let show = $state(false);
   let clickCount = $state(0);
 
-  const badgeKey = "medalhadas";
   const badgeAward = "drumkit";
 
-  function hasBadge() {
-    try {
-      const list = JSON.parse(localStorage.getItem(badgeKey) || "[]");
-      return Array.isArray(list) && list.includes(badgeAward);
-    } catch {
-      return false;
-    }
-  }
-
-  function awardBadge() {
-    const list = JSON.parse(localStorage.getItem(badgeKey) || "[]");
-    if (!list.includes(badgeAward)) {
-      list.push(badgeAward);
-      localStorage.setItem(badgeKey, JSON.stringify(list));
-    }
-  }
-
   onMount(() => {
-    if (!hasBadge()) show = true;
+    if (!hasBadge(badgeAward)) show = true;
   });
 
   $effect(() => {
@@ -50,7 +33,7 @@
     drumkitEl.addEventListener("click", () => {
       clickCount++;
       if (clickCount === 42) {
-        awardBadge();
+        awardBadge(badgeAward);
         console.log("🎉 WOW!! Você encontrou uma surpresinha!");
       }
     });
