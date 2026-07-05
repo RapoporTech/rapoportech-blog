@@ -81,9 +81,5 @@
     p {
       margin: 0;
     }
-
-    p + p {
-      margin-top: .35rem;
-    }
   }
 </style>
