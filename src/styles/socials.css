@@ -5,10 +5,10 @@
    width: 5rem;
 
    &#enterprise {
-     background-image: url("src/assets/pixil-frame-0.png");
+      background-image: url("../assets/pixil-frame-0.png");
    }
 
    &#spacenine {
-     background-image: url("src/assets/DeepSpaceNein.png");
+      background-image: url("../assets/DeepSpaceNein.png");
    }
  }

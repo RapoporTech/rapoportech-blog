@@ -8,7 +8,7 @@ html {
     flex-direction: column;
     margin: 0;
     height: 100%;
-    background-image: url('src/assets/sky-bg.png');
+    background-image: url('../assets/sky-bg.png');
     color: white;
   }
 }

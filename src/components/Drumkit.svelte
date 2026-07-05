@@ -52,7 +52,7 @@
     position: absolute;
     width: 2px;
     height: 2px;
-    background-image: url('src/assets/Drumkit.png');
+    background-image: url('../assets/Drumkit.png');
     background-size: 100% 100%;
     left: 15.2rem;
     top: 13rem;
