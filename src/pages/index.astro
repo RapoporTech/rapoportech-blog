@@ -1,9 +1,11 @@
 ---
 import "../styles/animations.css";
 import "../styles/global.css";
+import "../styles/dialog.css";
 import Footer from "../sections/Footer.astro";
 import Sobre from "../sections/Sobre.astro";
 import Menu from "../sections/Menu.astro";
+import Drumkit from "../components/Drumkit.astro";
 ---
 <html lang="pt-BR">
 	<head>
@@ -25,7 +27,7 @@ import Menu from "../sections/Menu.astro";
 	</head>
 
 	<body>
-    <div class="drumkit"></div>
+    <Drumkit />
     <div class="container-info">
       <h1>Olá, eu sou o Diego Rapoport!</h1>
       <div class="img-menu">
