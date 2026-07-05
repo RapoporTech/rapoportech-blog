@@ -1,0 +1,53 @@
+---
+---
+
+<div id="drumkit"></div>
+<div id="drumkit-tooltip" popover="manual">
+  <p>🎉 WOW!! Você encontrou uma surpresinha!</p>
+  <p>Continue procurando, você pode achar mais 🧐</p>
+</div>
+
+<style>
+  #drumkit-tooltip {
+    position: fixed;
+    inset: unset;
+    margin: 0;
+    border: none;
+    border-radius: .5rem;
+    padding: .75rem 1rem;
+    background: #1f2937;
+    color: #fff;
+    font-family: 'BioRhyme', serif;
+    font-size: .875rem;
+    max-width: 220px;
+    line-height: 1.5;
+    box-shadow: 0 4px 16px rgba(0,0,0,.35);
+
+    p {
+      margin: 0;
+    }
+
+    p + p {
+      margin-top: .35rem;
+    }
+  }
+</style>
+
+<script>
+  const drumkit = document.getElementById("drumkit");
+  const tooltip = document.getElementById("drumkit-tooltip");
+  const key = "drumkit-tooltip-seen";
+
+  if (drumkit && tooltip && !localStorage.getItem(key)) {
+    drumkit.addEventListener("mouseenter", () => {
+      const rect = drumkit.getBoundingClientRect();
+      tooltip.style.left = `${rect.right + 8}px`;
+      tooltip.style.top = `${rect.top - 10}px`;
+      tooltip.showPopover();
+      localStorage.setItem(key, "true");
+      setTimeout(() => {
+        if (tooltip.matches(":popover-open")) tooltip.hidePopover();
+      }, 4000);
+    }, { once: true });
+  }
+</script>
