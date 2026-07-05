@@ -69,6 +69,21 @@ footer {
   }
 }
 
+#drumkit {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background-image: url('src/assets/Drumkit.png');
+  background-size: 100% 100%;
+  left: 15.2rem;
+  top: 13rem;
+
+  &:hover {
+    width: 9rem;
+    height: 5rem;
+  }
+}
+
 .container-info {
   display: flex;
   flex-direction: column;
@@ -136,19 +151,4 @@ footer {
 
 .not-ready {
   display: none;
-}
-
-.drumkit {
-  position: absolute;
-  width: 2px;
-  height: 2px;
-  background-image: url('src/assets/Drumkit.png');
-  background-size: 100% 100%;
-  left: 15.2rem;
-  top: 13rem;
-
-  &:hover {
-    width: 9rem;
-    height: 5rem;
-  }
 }
