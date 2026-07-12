@@ -13,13 +13,18 @@
 <span class="info-balloon">
   <slot />
   <span class="tooltip {placement}">
-    {#if title}
-      <span class="title">{title}</span>
-      <br>
-    {/if}
-    {#if content}
-      <span class="content">{@html content}</span>
-    {/if}
+    <span class="tooltip-inner">
+      {#if title}
+        <span class="title-row">
+          <span class="music">𝄞</span>
+          <span class="title">{title}</span>
+          <span class="music">𝄞</span>
+        </span>
+      {/if}
+      {#if content}
+        <span class="content">{@html content}</span>
+      {/if}
+    </span>
   </span>
 </span>
 
@@ -61,16 +66,32 @@
     border: 5px solid transparent;
   }
 
+  .tooltip-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.25rem;
+  }
+
+  .title-row {
+    display: flex;
+    align-items: center;
+    gap: 0.375rem;
+  }
+
   .title {
     font-weight: 600;
     font-size: 0.75rem;
     text-transform: uppercase;
     letter-spacing: 0.06em;
     color: #94a3b8;
+    text-align: center;
   }
 
   .content {
     color: #334155;
+    text-align: left;
+    width: 100%;
   }
 
   .top {
@@ -149,5 +170,10 @@
     top: 50%;
     margin-top: -5px;
     border-right-color: #fff;
+  }
+
+  .music {
+    font-family: 'Noto Music';
+    font-size: .5rem;
   }
 </style>
