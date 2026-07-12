@@ -26,6 +26,7 @@
 <style>
   .info-balloon {
     cursor: help;
+    position: relative;
   }
 
   .tooltip {
@@ -73,7 +74,7 @@
   }
 
   .top {
-    top: 5%;
+    bottom: 100%;
     left: 50%;
     transform: translateX(-50%);
   }
