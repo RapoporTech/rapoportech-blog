@@ -1,3 +1,7 @@
+:root {
+  --yellow-highlight: #ffd659;
+}
+
 html {
   margin: 0;
   width: 100%;
@@ -121,7 +125,7 @@ footer {
 .pergunta {
   display: inline;
   font-style: italic;
-  color: #FFD659;
+  color: var(--yellow-highlight);
 
   &::after,
   &::before {
@@ -136,4 +140,8 @@ footer {
 
 .not-ready {
   display: none;
+}
+
+.fade-in-left-normal {
+  animation: fade-in-left-normal 1s ease-out 0s 1 normal none;
 }
