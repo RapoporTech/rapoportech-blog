@@ -34,7 +34,7 @@
     pointer-events: none;
     border: 1px solid #e2e8f0;
     border-radius: 0.5rem;
-    padding: 10px 14px;
+    padding: .5rem;
     font-family: system-ui, sans-serif;
     font-size: 0.9rem;
     color: #334155;
@@ -44,8 +44,8 @@
     opacity: 0;
     visibility: hidden;
     transition:
-      opacity 120ms ease,
-      visibility 120ms ease;
+      opacity 1000ms ease,
+      visibility 200ms ease;
   }
 
   .info-balloon:hover .tooltip {
