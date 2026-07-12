@@ -1,0 +1,33 @@
+---
+import "../styles/global.css";
+import "../layouts/layout-styles.css";
+import { getCollection } from "astro:content";
+import EscritosLayout from "../layouts/EscritosLayout.astro";
+
+const allPosts = await getCollection("escritos");
+---
+<script>
+  document.querySelectorAll(".type-fade-right").forEach(el => {
+    const text = el.textContent;
+    el.textContent = "";
+
+    [...text].forEach((char, i) => {
+        const span = document.createElement("span");
+        span.style.setProperty("--i", i);
+        span.textContent = char;
+      if(char === " ") span.style.padding = ".2rem";
+        el.appendChild(span);
+    });
+  });
+</script>
+
+<EscritosLayout titulo="Escritos">
+  <h1>Deleite-se, Irrite-se, Reconstrua-se</h1>
+  {
+    allPosts.map((post) => (
+      <li>
+        <a class="type-fade-right" href={`/escritos/${post.id}`}>{post.data.titulo}</a>
+      </li>
+    ))
+  }
+</EscritosLayout>

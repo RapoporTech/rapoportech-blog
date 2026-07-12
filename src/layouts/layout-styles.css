@@ -1,0 +1,57 @@
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 0 10rem;
+
+  >h1 {
+    align-self: center;
+  }
+
+  >p {
+    font-family: 'Jersey';
+    font-size: 1.2rem;
+  }
+
+  li {
+    font-size: 1.5rem;
+
+    &::marker {
+      font-family: 'Noto Music';
+      content: "𝄆";
+    }
+
+    &:has(> a:visited)::marker {
+      color: var(--yellow-highlight);
+    }
+
+    >a {
+      margin-left: .5rem;
+      text-decoration: none;
+      font-family: 'BioRhyme', serif;
+      color: #fff;
+
+      &:visited {
+        color: var(--yellow-highlight);
+      }
+    }
+  }
+}
+
+.blog-body {
+  backdrop-filter: blur(2px);
+  font-family: 'BioRhyme', serif;
+}
+
+.type-fade-right {
+    display: inline-flex;
+    gap: 0;
+}
+
+.type-fade-right span {
+    opacity: 0;
+    transform: translateX(-0.35em);
+    animation: reveal 1s ease forwards;
+    animation-delay: calc(var(--i) * 60ms);
+    will-change: opacity, transform;
+}
