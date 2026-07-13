@@ -45,8 +45,6 @@
     font-size: 0.9rem;
     color: #334155;
     line-height: 1.5;
-    min-width: 160px;
-    max-width: 280px;
     opacity: 0;
     visibility: hidden;
     transition:
@@ -70,13 +68,10 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 0.25rem;
   }
 
   .title-row {
-    display: flex;
-    align-items: center;
-    gap: 0.375rem;
+    width: 100%;
   }
 
   .title {
@@ -85,13 +80,13 @@
     text-transform: uppercase;
     letter-spacing: 0.06em;
     color: #94a3b8;
-    text-align: center;
   }
 
   .content {
     color: #334155;
-    text-align: left;
+    margin: 0 2rem;
     width: 100%;
+    text-indent: 1rem;
   }
 
   .top {
