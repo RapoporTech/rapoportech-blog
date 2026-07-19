@@ -9,6 +9,7 @@ const escritos = defineCollection({
       dataPub: z.date(),
       descricao: z.string().optional(),
       autor: z.string(),
+      rascunho: z.boolean().default(true),
       imagem: z.object({
         url: z.string(),
         alt: z.string()

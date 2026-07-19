@@ -2,21 +2,23 @@
 import "../styles/global.css";
 import "../layouts/layout-styles.css";
 import { getCollection } from "astro:content";
+import { isPublished } from "../lib/publishing.ts";
 import EscritosLayout from "../layouts/EscritosLayout.astro";
 
-const allPosts = await getCollection("escritos");
+const allPosts = (await getCollection("escritos")).filter(isPublished);
 ---
+
 <script>
-  document.querySelectorAll(".type-fade-right").forEach(el => {
+  document.querySelectorAll(".type-fade-right").forEach((el) => {
     const text = el.textContent;
     el.textContent = "";
 
     [...text].forEach((char, i) => {
-        const span = document.createElement("span");
-        span.style.setProperty("--i", i);
-        span.textContent = char;
-      if(char === " ") span.style.padding = ".2rem";
-        el.appendChild(span);
+      const span = document.createElement("span");
+      span.style.setProperty("--i", i);
+      span.textContent = char;
+      if (char === " ") span.style.padding = ".2rem";
+      el.appendChild(span);
     });
   });
 </script>
@@ -26,7 +28,9 @@ const allPosts = await getCollection("escritos");
   {
     allPosts.map((post) => (
       <li>
-        <a class="type-fade-right" href={`/escritos/${post.id}`}>{post.data.titulo}</a>
+        <a class="type-fade-right" href={`/escritos/${post.id}`}>
+          {post.data.titulo}
+        </a>
       </li>
     ))
   }
