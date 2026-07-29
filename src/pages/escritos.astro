@@ -5,7 +5,9 @@ import { getCollection } from "astro:content";
 import { isPublished } from "../lib/publishing.ts";
 import EscritosLayout from "../layouts/EscritosLayout.astro";
 
-const allPosts = (await getCollection("escritos")).filter(isPublished);
+const allPosts = (await getCollection("escritos"))
+  .filter(isPublished)
+  .sort((a, b) => b.data.dataPub.valueOf() - a.data.dataPub.valueOf());
 ---
 
 <script>
