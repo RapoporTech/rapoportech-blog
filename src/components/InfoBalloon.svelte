@@ -31,11 +31,17 @@
 <style>
   .info-balloon {
     cursor: help;
-    position: relative;
+
+    @media (min-width: 48em) {
+      position: relative;
+    }
   }
 
   .tooltip {
     position: absolute;
+    left: var(--gutter);
+    right: var(--gutter);
+    transform: translateY(-100%);
     z-index: 50;
     pointer-events: none;
     border: 1px solid #e2e8f0;
@@ -50,6 +56,12 @@
     transition:
       opacity 1000ms ease,
       visibility 200ms ease;
+
+    @media (min-width: 48em) {
+      left: auto;
+      right: auto;
+      transform: none;
+    }
   }
 
   .info-balloon:hover .tooltip {
@@ -89,82 +101,84 @@
     text-indent: 1rem;
   }
 
-  .top {
-    bottom: 100%;
-    left: 50%;
-    transform: translateX(-50%);
-  }
+  @media (min-width: 48em) {
+    .top {
+      bottom: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+    }
 
-  .top::before {
-    margin-left: -6px;
-    border-top-color: #e2e8f0;
-  }
+    .top::before {
+      margin-left: -6px;
+      border-top-color: #e2e8f0;
+    }
 
-  .top::after {
-    top: 100%;
-    left: 50%;
-    margin-left: -5px;
-    border-top-color: #fff;
-  }
+    .top::after {
+      top: 100%;
+      left: 50%;
+      margin-left: -5px;
+      border-top-color: #fff;
+    }
 
-  .bottom {
-    top: calc(100% + 8px);
-    left: 50%;
-    transform: translateX(-50%);
-  }
+    .bottom {
+      top: calc(100% + 8px);
+      left: 50%;
+      transform: translateX(-50%);
+    }
 
-  .bottom::before {
-    bottom: 100%;
-    left: 50%;
-    margin-left: -6px;
-    border-bottom-color: #e2e8f0;
-  }
+    .bottom::before {
+      bottom: 100%;
+      left: 50%;
+      margin-left: -6px;
+      border-bottom-color: #e2e8f0;
+    }
 
-  .bottom::after {
-    bottom: 100%;
-    left: 50%;
-    margin-left: -5px;
-    border-bottom-color: #fff;
-  }
+    .bottom::after {
+      bottom: 100%;
+      left: 50%;
+      margin-left: -5px;
+      border-bottom-color: #fff;
+    }
 
-  .left {
-    right: calc(100% + 8px);
-    top: 50%;
-    transform: translateY(-50%);
-  }
+    .left {
+      right: calc(100% + 8px);
+      top: 50%;
+      transform: translateY(-50%);
+    }
 
-  .left::before {
-    left: 100%;
-    top: 50%;
-    margin-top: -6px;
-    border-left-color: #e2e8f0;
-  }
+    .left::before {
+      left: 100%;
+      top: 50%;
+      margin-top: -6px;
+      border-left-color: #e2e8f0;
+    }
 
-  .left::after {
-    left: 100%;
-    top: 50%;
-    margin-top: -5px;
-    border-left-color: #fff;
-  }
+    .left::after {
+      left: 100%;
+      top: 50%;
+      margin-top: -5px;
+      border-left-color: #fff;
+    }
 
-  .right {
-    left: calc(100% + 8px);
-    top: 50%;
-    transform: translateY(-50%);
-  }
+    .right {
+      left: calc(100% + 8px);
+      top: 50%;
+      transform: translateY(-50%);
+    }
 
-  .right::before {
-    right: 100%;
-    top: 50%;
-    margin-top: -6px;
-    border-right-color: #e2e8f0;
-  }
+    .right::before {
+      right: 100%;
+      top: 50%;
+      margin-top: -6px;
+      border-right-color: #e2e8f0;
+    }
 
-  .right::after {
-    right: 100%;
-    top: 50%;
-    margin-top: -5px;
-    border-right-color: #fff;
+    .right::after {
+      right: 100%;
+      top: 50%;
+      margin-top: -5px;
+      border-right-color: #fff;
+    }
   }
 
   .music {
